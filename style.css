@@ -131,3 +131,38 @@ button:hover {
 .pag-item input:checked + span {
     color: #ff1493;
 }
+.entrega {
+    background: white;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.opcoes-entrega {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.entrega-item {
+    background: #fff0f5;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 2px solid #eee;
+}
+
+.entrega-item:hover {
+    border-color: #ff69b4;
+}
+
+#endereco {
+    width: 90%;
+    padding: 12px;
+    border: 2px solid #ffb6c1;
+    border-radius: 8px;
+    margin-top: 10px;
+}
