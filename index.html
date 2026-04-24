@@ -2,41 +2,60 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Loja de Pijamas e Doces</title>
+    <title>Loli Pijamas</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <h1>💤 Loli Pijamas</h1>
-        <p>Pijamas confortáveis e doces deliciosos!</p>
-    </header>
+<header>
+    <h1>💤 Loli Pijamas</h1>
+    <p>Pijamas confortáveis e lindos 💕</p>
+</header>
 
-    <section>
-        <h2>Nossos Produtos</h2>
+<section>
+    <h2>Nossos Produtos</h2>
 
-        <div class="produto">
-            <img src="1777033680350.jpg" width="200">
-            <h3>Pijama Americano</h3>
-            <p>Super confortável e lindo 💕</p>
-            <p><strong>R$ 79,90</strong></p>
-            <a href="https://wa.me/5587991292282?text=Olá!%20Tenho%20interesse%20no%20pijama%20💤%20Pode%20me%20passar%20valores,%20tamanhos%20e%20disponibilidade?" target="_blank">
-    <button>Comprar</button>
+    <div class="produto">
+        <img src="1777033680350.jpg" width="200">
+        <h3>Pijama Americano</h3>
+        <p>Super confortável e lindo 💕</p>
+        <p><strong>R$ 79,90</strong></p>
+
+        <button onclick="adicionarCarrinho('Pijama Americano', 79.90)">
+            Adicionar ao carrinho
+        </button>
+    </div>
+
+    <div class="produto">
+        <img src="1777033680344.jpg" width="200">
+        <h3>Pijama Blogueirinha</h3>
+        <p>Delicado e lindo</p>
+        <p><strong>R$ 39,90</strong></p>
+
+        <button onclick="adicionarCarrinho('Pijama Blogueirinha', 39.90)">
+            Adicionar ao carrinho
+        </button>
+    </div>
+
+</section>
+
+<!-- 🛒 CARRINHO -->
+<section class="carrinho">
+    <h2>🛒 Meu Carrinho</h2>
+    <ul id="lista-carrinho"></ul>
+    <p><strong>Total: R$ <span id="total">0.00</span></strong></p>
+
+    <button onclick="finalizarCompra()">Finalizar no WhatsApp</button>
+</section>
+
+<!-- 💬 BOTÃO WHATSAPP FIXO -->
+<a href="https://wa.me/5587991292282?text=Olá!%20Quero%20mais%20informações%20sobre%20os%20pijamas%20💤" 
+   class="whatsapp-fixo" 
+   target="_blank">
+   💬
 </a>
-        </div>
 
-        <div class="produto">
-              <img src="1777033680344.jpg" width="200">
-            <h3>Pijama Blogueirinha</h3>
-            <p>Delicado e lindo</p>
-            <p><strong>R$ 3,90</strong></p>
-            <a href="https://wa.me/5587991292282?text=Olá!%20Tenho%20interesse%20no%20pijama%20💤%20Pode%20me%20passar%20valores,%20tamanhos%20e%20disponibilidade?" target="_blank">
-    <button>Comprar</button>
-</a>
-</a>
-        </div>
-
-    </section>
+<script src="script.js"></script>
 
 </body>
 </html>
