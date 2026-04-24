@@ -77,3 +77,12 @@ function finalizarCompra() {
     let url = `https://wa.me/5587991292282?text=${encodeURIComponent(mensagem)}`;
     window.open(url, "_blank");
 }
+function adicionarCarrinhoComPresente(nome, preco, idCheckbox) {
+    let presente = document.getElementById(idCheckbox).checked;
+
+    if (presente) {
+        nome += " 🎁 (Presente)";
+    }
+
+    adicionarCarrinho(nome, preco);
+}
