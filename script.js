@@ -48,13 +48,11 @@ function atualizarCarrinho() {
     let totalElemento = document.getElementById("total");
 
     lista.innerHTML = "";
-
     let total = 0;
 
     for (let nome in carrinho) {
         let item = carrinho[nome];
         let subtotal = item.preco * item.quantidade;
-
         total += subtotal;
 
         let li = document.createElement("li");
@@ -73,6 +71,16 @@ function atualizarCarrinho() {
     totalElemento.innerText = total.toFixed(2);
 }
 
+function mostrarEndereco(mostrar) {
+    let campo = document.getElementById("campo-endereco");
+
+    if (mostrar) {
+        campo.style.display = "block";
+    } else {
+        campo.style.display = "none";
+    }
+}
+
 function finalizarCompra() {
     if (Object.keys(carrinho).length === 0) {
         alert("Seu carrinho está vazio!");
@@ -83,6 +91,20 @@ function finalizarCompra() {
 
     if (!pagamento) {
         alert("Selecione a forma de pagamento!");
+        return;
+    }
+
+    let tipoEntrega = document.querySelector('input[name="tipoEntrega"]:checked');
+
+    if (!tipoEntrega) {
+        alert("Selecione entrega ou retirada!");
+        return;
+    }
+
+    let endereco = document.getElementById("endereco").value;
+
+    if (tipoEntrega.value === "Entrega" && endereco.trim() === "") {
+        alert("Digite o endereço para entrega!");
         return;
     }
 
@@ -99,19 +121,13 @@ function finalizarCompra() {
 
     mensagem += `%0ATotal: R$ ${total.toFixed(2)}`;
     mensagem += `%0AForma de pagamento: ${pagamento.value}`;
+    mensagem += `%0AOpção: ${tipoEntrega.value}`;
+
+    if (tipoEntrega.value === "Entrega") {
+        mensagem += `%0AEndereço: ${endereco}`;
+    }
 
     window.open(`https://wa.me/5587991292282?text=${mensagem}`, "_blank");
 }
-.pagamento {
-    background: white;
-    padding: 20px;
-    margin: 20px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-.pagamento p {
-    font-size: 16px;
     margin: 8px 0;
 }
