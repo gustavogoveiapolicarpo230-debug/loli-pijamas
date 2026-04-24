@@ -79,6 +79,13 @@ function finalizarCompra() {
         return;
     }
 
+    let pagamento = document.querySelector('input[name="pagamento"]:checked');
+
+    if (!pagamento) {
+        alert("Selecione a forma de pagamento!");
+        return;
+    }
+
     let mensagem = "Olá! Quero fazer este pedido:%0A%0A";
     let total = 0;
 
@@ -91,6 +98,7 @@ function finalizarCompra() {
     }
 
     mensagem += `%0ATotal: R$ ${total.toFixed(2)}`;
+    mensagem += `%0AForma de pagamento: ${pagamento.value}`;
 
     window.open(`https://wa.me/5587991292282?text=${mensagem}`, "_blank");
 }
