@@ -82,7 +82,25 @@
         </label>
     </div>
 </section>
-    
+    <section class="entrega">
+    <h2>🚚 Entrega ou Retirada</h2>
+
+    <div class="opcoes-entrega">
+        <label class="entrega-item">
+            <input type="radio" name="tipoEntrega" value="Retirada" onclick="mostrarEndereco(false)">
+            🏪 Retirada
+        </label>
+
+        <label class="entrega-item">
+            <input type="radio" name="tipoEntrega" value="Entrega" onclick="mostrarEndereco(true)">
+            🚚 Entrega
+        </label>
+    </div>
+
+    <div id="campo-endereco" style="display: none;">
+        <input type="text" id="endereco" placeholder="Digite seu endereço completo">
+    </div>
+</section>
 </section>
 
 <!-- 🛒 CARRINHO -->
