@@ -101,3 +101,33 @@ button:hover {
     padding: 5px 8px;
     font-size: 12px;
 }
+.opcoes-pagamento {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.pag-item {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    border: 2px solid #eee;
+    font-weight: 500;
+}
+
+.pag-item:hover {
+    border-color: #ff69b4;
+}
+
+/* esconder bolinha padrão */
+.pag-item input {
+    display: none;
+}
+
+/* quando selecionado */
+.pag-item input:checked + span {
+    color: #ff1493;
+}
