@@ -94,3 +94,16 @@ function finalizarCompra() {
 
     window.open(`https://wa.me/5587991292282?text=${mensagem}`, "_blank");
 }
+.pagamento {
+    background: white;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.pagamento p {
+    font-size: 16px;
+    margin: 8px 0;
+}
