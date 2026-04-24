@@ -45,3 +45,44 @@ button:hover {
     color: #ff1493;
     font-size: 18px;
 }
+.produto {
+    display: inline-block;
+    vertical-align: top;
+    width: 220px;
+    margin: 15px;
+}
+
+/* IMAGENS */
+.produto img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* CARRINHO */
+.carrinho {
+    background: white;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* BOTÃO WHATSAPP FIXO */
+.whatsapp-fixo {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: white;
+    font-size: 24px;
+    padding: 15px;
+    border-radius: 50%;
+    text-decoration: none;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.whatsapp-fixo:hover {
+    background-color: #1ebe5d;
+}
