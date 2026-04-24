@@ -4,10 +4,7 @@
     <meta charset="UTF-8">
     <title>Loli Pijamas</title>
 
-    <!-- FONTE POPPINS -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -20,24 +17,42 @@
 <section>
     <h2>Nossos Produtos</h2>
 
+    <!-- PRODUTO 1 -->
     <div class="produto">
         <img src="1777033680350.jpg" width="200">
         <h3>Pijama Americano</h3>
         <p>Super confortável e lindo 💕</p>
         <p><strong>R$ 79,90</strong></p>
 
-        <button onclick="adicionarCarrinho('Pijama Americano', 79.90)">
+        <!-- CHECKBOX PRESENTE -->
+        <label>
+            <input type="checkbox" id="presente1">
+            🎁 É para presente
+        </label>
+
+        <br>
+
+        <!-- BOTÃO -->
+        <button onclick="adicionarCarrinhoComPresente('Pijama Americano', 79.90, 'presente1')">
             Adicionar ao carrinho
         </button>
     </div>
 
+    <!-- PRODUTO 2 -->
     <div class="produto">
         <img src="1777033680344.jpg" width="200">
         <h3>Pijama Blogueirinha</h3>
         <p>Delicado e lindo</p>
         <p><strong>R$ 39,90</strong></p>
 
-        <button onclick="adicionarCarrinho('Pijama Blogueirinha', 39.90)">
+        <label>
+            <input type="checkbox" id="presente2">
+            🎁 É para presente
+        </label>
+
+        <br>
+
+        <button onclick="adicionarCarrinhoComPresente('Pijama Blogueirinha', 39.90, 'presente2')">
             Adicionar ao carrinho
         </button>
     </div>
@@ -47,22 +62,19 @@
 <!-- 🛒 CARRINHO -->
 <section class="carrinho">
     <h2>🛒 Meu Carrinho</h2>
-
     <ul id="lista-carrinho"></ul>
-
     <p><strong>Total: R$ <span id="total">0.00</span></strong></p>
 
     <button onclick="finalizarCompra()">Finalizar no WhatsApp</button>
 </section>
 
-<!-- 💬 BOTÃO WHATSAPP FIXO -->
+<!-- 💬 WHATSAPP FIXO -->
 <a href="https://wa.me/5587991292282?text=Olá!%20Quero%20mais%20informações%20sobre%20os%20pijamas%20💤" 
    class="whatsapp-fixo" 
    target="_blank">
    💬
 </a>
 
-<!-- SCRIPT -->
 <script src="script.js"></script>
 
 </body>
