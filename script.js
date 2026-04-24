@@ -127,7 +127,5 @@ function finalizarCompra() {
         mensagem += `%0AEndereço: ${endereco}`;
     }
 
-    window.open(`https://wa.me/5587991292282?text=${mensagem}`, "_blank");
-}
-    margin: 8px 0;
+        window.open(`https://wa.me/5587991292282?text=${mensagem}`, "_blank");
 }
