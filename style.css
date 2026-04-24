@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-color: #fff0f5;
     margin: 0;
     padding: 0;
@@ -20,16 +20,34 @@ h2 {
     text-align: center;
 }
 
+/* PRODUTO */
 .produto {
+    display: inline-block;
+    vertical-align: top;
     background: white;
     padding: 15px;
-    margin: 15px auto;
-    width: 250px;
+    margin: 15px;
+    width: 220px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     text-align: center;
 }
 
+/* IMAGEM */
+.produto img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* PREÇO */
+.produto strong {
+    color: #ff1493;
+    font-size: 18px;
+}
+
+/* BOTÃO */
 button {
     background-color: #ff69b4;
     color: white;
@@ -41,23 +59,6 @@ button {
 
 button:hover {
     background-color: #ff1493;
-}.produto strong {
-    color: #ff1493;
-    font-size: 18px;
-}
-.produto {
-    display: inline-block;
-    vertical-align: top;
-    width: 220px;
-    margin: 15px;
-}
-
-/* IMAGENS */
-.produto img {
-    width: 180px;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 10px;
 }
 
 /* CARRINHO */
@@ -69,7 +70,18 @@ button:hover {
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-/* BOTÃO WHATSAPP FIXO */
+/* LISTA DO CARRINHO */
+#lista-carrinho li {
+    margin: 10px 0;
+}
+
+#lista-carrinho button {
+    margin: 0 3px;
+    padding: 5px 8px;
+    font-size: 12px;
+}
+
+/* WHATSAPP FIXO */
 .whatsapp-fixo {
     position: fixed;
     bottom: 20px;
@@ -86,12 +98,6 @@ button:hover {
 .whatsapp-fixo:hover {
     background-color: #1ebe5d;
 }
-#lista-carrinho li {
-    margin: 10px 0;
-}
-
-#lista-carrinho button {
-    margin: 0 3px;
     padding: 5px 8px;
     font-size: 12px;
 }
