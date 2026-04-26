@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Produtos - Loli Pijamas</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>💤 Loli Pijamas</h1>
+
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="produtos.html">Produtos</a>
+        <a href="contato.html">Contato</a>
+    </nav>
+
+    <!-- 🛒 BOTÃO DO CARRINHO -->
+    <div class="carrinho-topo" onclick="toggleCarrinho()">
+        🛒 <span id="contador-carrinho">0</span>
+    </div>
+</header>
+
+<section>
+    <h2>Nossos Produtos</h2>
+
+    <div class="produto">
+        <img src="1777033680350.jpg">
+        <h3>Pijama Americano</h3>
+        <p><strong>R$ 79,90</strong></p>
+
+        <button onclick="adicionarCarrinho('Pijama Americano', 79.90)">
+            Adicionar ao carrinho
+        </button>
+    </div>
+
+    <div class="produto">
+        <img src="1777033680344.jpg">
+        <h3>Pijama Blogueirinha</h3>
+        <p>Delicado e lindo</p>
+        <p><strong>R$ 39,90</strong></p>
+
+        <button onclick="adicionarCarrinho('Pijama Blogueirinha', 39.90)">
+            Adicionar ao carrinho
+        </button>
+    </div>
+
+</section>
+
+<!-- 🛒 CARRINHO (embaixo) -->
+<section class="carrinho">
+    <h2>🛒 Meu Carrinho</h2>
+
+    <ul id="lista-carrinho"></ul>
+
+    <p><strong>Total: R$ <span id="total">0.00</span></strong></p>
+
+    <button onclick="finalizarCompra()">Finalizar no WhatsApp</button>
+</section>
+
+<!-- 🛒 CARRINHO LATERAL -->
+<div id="carrinho-lateral" class="carrinho-lateral">
+
+    <button class="fechar" onclick="toggleCarrinho()">❌</button>
+
+    <h2>🛒 Meu Carrinho</h2>
+
+    <ul id="lista-carrinho"></ul>
+
+    <p><strong>Total: R$ <span id="total">0.00</span></strong></p>
+
+    <button onclick="finalizarCompra()">Finalizar</button>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
