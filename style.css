@@ -100,9 +100,7 @@ button:hover {
 .whatsapp-fixo:hover {
     background-color: #1ebe5d;
 }
-    padding: 5px 8px;
-    font-size: 12px;
-}
+   
 .opcoes-pagamento {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -130,8 +128,8 @@ button:hover {
 }
 
 /* quando selecionado */
-.pag-item input:checked + span {
-    color: #ff1493;
+.pag-item input:checked {
+    outline: 2px solid #ff1493;
 }
 .entrega {
     background: white;
@@ -196,4 +194,197 @@ button:hover {
         margin: 10px;
     }
 
+}
+nav a {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+footer {
+    background: #ff69b4;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+}
+.carrinho-topo {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: white;
+    color: #ff1493;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+.carrinho-lateral {
+    position: fixed;
+    top: 0;
+    right: -350px;
+    width: 300px;
+    height: 100%;
+    background: white;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+    padding: 20px;
+    transition: right 0.3s;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+/* quando abrir */
+.carrinho-lateral.ativo {
+    right: 0;
+}
+/* BANNER */
+.banner {
+    background: linear-gradient(45deg, #ff69b4, #ff1493);
+}
+
+/* NOVO - separação visual */
+.banner-secundario {
+    background: linear-gradient(45deg, #ffc0cb, #ffb6c1);
+    color: #333;
+}
+
+
+/* CARROSSEL */
+.carrossel {
+    overflow: hidden;
+    padding: 20px;
+    position: relative;
+}
+
+/* CONTAINER */
+.carrossel-container {
+    display: flex;
+    gap: 20px;
+    width: max-content;
+    animation: deslizar 20s linear infinite;
+}
+
+/* PAUSAR AO PASSAR O MOUSE */
+.carrossel-container:hover {
+    animation-play-state: paused;
+}
+
+/* CARDS */
+.card {
+    min-width: 200px;
+    background: white;
+    padding: 10px;
+    border-radius: 15px;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* EFEITO FLUTUAR */
+.card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+}
+
+/* IMAGEM */
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* ANIMAÇÃO INFINITA SUAVE */
+@keyframes deslizar {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+/* TAMANHO DO CARD */
+.card {
+    min-width: 180px;
+    max-width: 180px;
+}
+
+/* IMAGEM AJUSTADA */
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover; /* mantém proporção sem distorcer */
+    border-radius: 10px;
+}
+/* CARDS MAIS PREMIUM */
+.card {
+    min-width: 180px;
+    max-width: 180px;
+    background: white;
+    padding: 10px;
+    border-radius: 18px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+/* IMAGEM */
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.4s ease;
+}
+
+/* TEXTO */
+.card p {
+    margin-top: 8px;
+    font-weight: 500;
+    color: #444;
+}
+
+/* HOVER (EFEITO LOJA GRANDE) */
+.card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+/* ZOOM NA IMAGEM */
+.card:hover img {
+    transform: scale(1.1);
+}
+
+/* EFEITO BRILHO */
+.card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.5), transparent);
+    transition: 0.6s;
+}
+
+.card:hover::after {
+    left: 100%;
+}
+.banner-secundario {
+    display: flex;
+    flex-direction: column; /* um embaixo do outro */
+    justify-content: center; /* centraliza vertical */
+    align-items: center; /* centraliza horizontal */
+    text-align: center;
+    height: 200px; /* opcional (define altura do banner) */
+}
+.banner-secundario h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.banner-secundario p {
+    margin-top: 8px;
+    font-size: 16px;
+    opacity: 0.8;
 }
