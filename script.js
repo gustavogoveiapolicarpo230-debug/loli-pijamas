@@ -46,7 +46,7 @@ function diminuir(nome) {
     if (carrinho[nome].quantidade <= 0) {
         delete carrinho[nome];
     }
-
+localStorage.setItem("carrinho", JSON.stringify(carrinho));
     atualizarCarrinho();
 }
 
@@ -176,3 +176,4 @@ window.onclick = function(event) {
         carrinho.classList.remove("ativo");
     }
 }
+atualizarCarrinho();
