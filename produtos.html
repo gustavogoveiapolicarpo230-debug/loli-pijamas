@@ -18,7 +18,7 @@
         <a href="contato.html">Contato</a>
     </nav>
 
-    <!-- 🛒 BOTÃO DO CARRINHO -->
+    <!-- 🛒 CARRINHO TOPO -->
     <div class="carrinho-topo" onclick="toggleCarrinho()">
         🛒 <span id="contador-carrinho">0</span>
     </div>
@@ -40,7 +40,6 @@
     <div class="produto">
         <img src="1777033680344.jpg">
         <h3>Pijama Blogueirinha</h3>
-        <p>Delicado e lindo</p>
         <p><strong>R$ 39,90</strong></p>
 
         <button onclick="adicionarCarrinho('Pijama Blogueirinha', 39.90)">
@@ -50,18 +49,7 @@
 
 </section>
 
-<!-- 🛒 CARRINHO (embaixo) -->
-<section class="carrinho">
-    <h2>🛒 Meu Carrinho</h2>
-
-    <ul id="lista-carrinho"></ul>
-
-    <p><strong>Total: R$ <span id="total">0.00</span></strong></p>
-
-    <button onclick="finalizarCompra()">Finalizar no WhatsApp</button>
-</section>
-
-<!-- 🛒 CARRINHO LATERAL -->
+<!-- 🛒 CARRINHO LATERAL COMPLETO -->
 <div id="carrinho-lateral" class="carrinho-lateral">
 
     <button class="fechar" onclick="toggleCarrinho()">❌</button>
@@ -72,7 +60,53 @@
 
     <p><strong>Total: R$ <span id="total">0.00</span></strong></p>
 
-    <button onclick="finalizarCompra()">Finalizar</button>
+    <!-- 💳 PAGAMENTO -->
+    <h3>💳 Pagamento</h3>
+    <div class="opcoes-pagamento">
+
+        <label class="pag-item">
+            <input type="radio" name="pagamento" value="Pix">
+            <span>💸 Pix</span>
+        </label>
+
+        <label class="pag-item">
+            <input type="radio" name="pagamento" value="Dinheiro">
+            <span>💵 Dinheiro</span>
+        </label>
+
+        <label class="pag-item">
+            <input type="radio" name="pagamento" value="Crédito">
+            <span>💳 Crédito</span>
+        </label>
+
+        <label class="pag-item">
+            <input type="radio" name="pagamento" value="Débito">
+            <span>💳 Débito</span>
+        </label>
+
+    </div>
+
+    <!-- 🚚 ENTREGA -->
+    <h3>🚚 Entrega</h3>
+    <div class="opcoes-entrega">
+
+        <label class="entrega-item">
+            <input type="radio" name="tipoEntrega" value="Retirada" onclick="mostrarEndereco(false)">
+            🏪 Retirada
+        </label>
+
+        <label class="entrega-item">
+            <input type="radio" name="tipoEntrega" value="Entrega" onclick="mostrarEndereco(true)">
+            🚚 Entrega
+        </label>
+
+    </div>
+
+    <div id="campo-endereco" style="display:none;">
+        <input type="text" id="endereco" placeholder="Digite seu endereço">
+    </div>
+
+    <button onclick="finalizarCompra()">Finalizar no WhatsApp</button>
 
 </div>
 
