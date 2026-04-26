@@ -115,47 +115,6 @@
     </div>
 </section>
 
-<!-- 💳 PAGAMENTO -->
-<section class="pagamento">
-    <h2>💳 Formas de Pagamento</h2>
-
-    <div class="opcoes-pagamento">
-        <label class="pag-item">
-            <input type="radio" name="pagamento" value="Pix"> 💸 Pix
-        </label>
-
-        <label class="pag-item">
-            <input type="radio" name="pagamento" value="Dinheiro"> 💵 Dinheiro
-        </label>
-
-        <label class="pag-item">
-            <input type="radio" name="pagamento" value="Cartão de crédito"> 💳 Crédito
-        </label>
-
-        <label class="pag-item">
-            <input type="radio" name="pagamento" value="Cartão de débito"> 💳 Débito
-        </label>
-    </div>
-</section>
-
-<!-- 🚚 ENTREGA -->
-<section class="entrega">
-    <h2>🚚 Entrega ou Retirada</h2>
-
-    <div class="opcoes-entrega">
-        <label class="entrega-item">
-            <input type="radio" name="tipoEntrega" value="Retirada" onclick="mostrarEndereco(false)"> 🏪 Retirada
-        </label>
-
-        <label class="entrega-item">
-            <input type="radio" name="tipoEntrega" value="Entrega" onclick="mostrarEndereco(true)"> 🚚 Entrega
-        </label>
-    </div>
-
-    <div id="campo-endereco" style="display: none;">
-        <input type="text" id="endereco" placeholder="Digite seu endereço completo">
-    </div>
-</section>
 
 <!-- 🛒 CARRINHO LATERAL (ÚNICO) -->
 <div id="carrinho-lateral" class="carrinho-lateral">
@@ -168,7 +127,47 @@
 
     <p><strong>Total: R$ <span id="total">0.00</span></strong></p>
 
-    <button onclick="finalizarCompra()">Finalizar</button>
+    <!-- 💳 PAGAMENTO -->
+    <h3>💳 Pagamento</h3>
+    <div class="opcoes-pagamento">
+       <label class="pag-item">
+    <input type="radio" name="pagamento" value="Pix">
+    <span>💸 Pix</span>
+</label>
+
+<label class="pag-item">
+    <input type="radio" name="pagamento" value="Dinheiro">
+    <span>💵 Dinheiro</span>
+</label>
+
+<label class="pag-item">
+    <input type="radio" name="pagamento" value="Crédito">
+    <span>💳 Crédito</span>
+</label>
+
+<label class="pag-item">
+    <input type="radio" name="pagamento" value="Débito">
+    <span>💳 Débito</span>
+</label>
+    </div>
+
+    <!-- 🚚 ENTREGA -->
+    <h3>🚚 Entrega</h3>
+    <div class="opcoes-entrega">
+        <label class="entrega-item">
+            <input type="radio" name="tipoEntrega" value="Retirada" onclick="mostrarEndereco(false)"> 🏪 Retirada
+        </label>
+
+        <label class="entrega-item">
+            <input type="radio" name="tipoEntrega" value="Entrega" onclick="mostrarEndereco(true)"> 🚚 Entrega
+        </label>
+    </div>
+
+    <div id="campo-endereco" style="display:none;">
+        <input type="text" id="endereco" placeholder="Digite seu endereço">
+    </div>
+
+    <button onclick="finalizarCompra()">Finalizar no WhatsApp</button>
 
 </div>
 
