@@ -198,8 +198,11 @@ button:hover {
     animation: deslizar 20s linear infinite;
 }
 
-.carrossel-container:hover {
-    animation-play-state: paused;
+.carrossel-container {
+    display: flex;
+    gap: 20px;
+    animation: deslizar 25s linear infinite;
+    will-change: transform;
 }
 
 /* CARD */
@@ -259,9 +262,11 @@ footer {
 
     /* IMAGEM MAIOR */
     .produto img {
-        height: 220px;
-    }
-
+    width: 100%;
+    height: auto; /* REMOVE o zoom */
+    object-fit: contain; /* mostra a imagem inteira */
+    border-radius: 10px;
+}
     /* BOTÃO GRANDE */
     button {
         font-size: 16px;
@@ -274,8 +279,14 @@ footer {
     }
 
     .card img {
-        height: 130px;
-    }
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+
+    image-rendering: auto;
+    backface-visibility: hidden;
+    transform: translateZ(0); /* força renderização melhor */
+}
 
     /* CARRINHO */
     .carrinho-lateral {
