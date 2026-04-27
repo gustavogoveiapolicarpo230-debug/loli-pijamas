@@ -2,6 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produtos - Loli Pijamas</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -23,29 +24,49 @@
         🛒 <span id="contador-carrinho">0</span>
     </div>
 </header>
-
 <section>
-    <h2>Nossos Produtos</h2>
+<h2>Nossos Produtos</h2>
 
-    <div class="produto">
-        <img src="1777033680350.jpg">
-        <h3>Pijama Americano</h3>
-        <p><strong>R$ 79,90</strong></p>
+<div class="filtros">
+    <button onclick="filtrar('todos')">Todos</button>
+    <button onclick="filtrar('feminino')">Feminino</button>
+    <button onclick="filtrar('masculino')">Masculino</button>
+    <button onclick="filtrar('infantil')">Infantil</button>
+</div>
 
-        <button onclick="adicionarCarrinho('Pijama Americano', 79.90)">
-            Adicionar ao carrinho
-        </button>
-    </div>
+<!-- PRODUTO 1 -->
+<div class="produto" data-categoria="feminino">
+    <img src="1777033680350.jpg">
+    <h3>Pijama Americano</h3>
+    <p><strong>R$ 79,90</strong></p>
 
-    <div class="produto">
-        <img src="1777033680344.jpg">
-        <h3>Pijama Blogueirinha</h3>
-        <p><strong>R$ 39,90</strong></p>
+    <p>📏 Tamanho:</p>
+    <label><input type="radio" name="tamanho1" value="PP"> PP</label>
+    <label><input type="radio" name="tamanho1" value="P"> P</label>
+    <label><input type="radio" name="tamanho1" value="M"> M</label>
+    <label><input type="radio" name="tamanho1" value="G"> G</label>
 
-        <button onclick="adicionarCarrinho('Pijama Blogueirinha', 39.90)">
-            Adicionar ao carrinho
-        </button>
-    </div>
+    <button onclick="adicionarComTamanho('Pijama Americano', 79.90, 'tamanho1')">
+        Adicionar ao carrinho
+    </button>
+</div>
+
+<!-- PRODUTO 2 -->
+<div class="produto" data-categoria="masculino">
+    <img src="1777033680344.jpg">
+    <h3>Pijama Blogueirinha</h3>
+    <p><strong>R$ 39,90</strong></p>
+
+    <p>📏 Tamanho:</p>
+    <label><input type="radio" name="tamanho2" value="PP"> PP</label>
+    <label><input type="radio" name="tamanho2" value="P"> P</label>
+    <label><input type="radio" name="tamanho2" value="M"> M</label>
+    <label><input type="radio" name="tamanho2" value="G"> G</label>
+
+    <button onclick="adicionarComTamanho('Pijama Blogueirinha', 39.90, 'tamanho2')">
+        Adicionar ao carrinho
+    </button>
+</div>
 
 </section>
 
