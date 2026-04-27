@@ -1,7 +1,8 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loli Pijamas</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -30,24 +31,12 @@
     <p>Conheça nossos pijamas mais amados 💕</p>
 </section>
 
-<!-- 🧩 CATEGORIAS -->
-<section class="categorias">
-    <h2>Categorias</h2>
-
-    <div class="categorias-grid">
-        <div class="categoria">👚 Feminino</div>
-        <div class="categoria">👕 Masculino</div>
-        <div class="categoria">🧸 Infantil</div>
-    </div>
-</section>
-
 <!-- ⭐ CARROSSEL -->
 <section class="carrossel">
     <h2>⭐ Mais Vendidos</h2>
 
     <div class="carrossel-container">
 
-        <!-- ORIGINAL -->
         <div class="card">
             <a href="produtos.html">
                 <img src="1777033680350.jpg">
@@ -62,7 +51,7 @@
             </a>
         </div>
 
-        <!-- DUPLICADO -->
+        <!-- duplicado pra efeito infinito -->
         <div class="card">
             <a href="produtos.html">
                 <img src="1777033680350.jpg">
@@ -84,6 +73,7 @@
 <section>
     <h2>Nossos Produtos</h2>
 
+    <!-- PRODUTO 1 -->
     <div class="produto">
         <img src="1777033680350.jpg">
         <h3>Pijama Americano</h3>
@@ -94,11 +84,19 @@
             🎁 É para presente
         </label>
 
-        <button onclick="adicionarCarrinhoComPresente('Pijama Americano', 79.90, 'presente1')">
+        <p>📏 Tamanho:</p>
+
+        <label><input type="radio" name="tamanho1" value="PP"> PP</label>
+        <label><input type="radio" name="tamanho1" value="P"> P</label>
+        <label><input type="radio" name="tamanho1" value="M"> M</label>
+        <label><input type="radio" name="tamanho1" value="G"> G</label>
+
+        <button onclick="adicionarComTamanho('Pijama Americano', 79.90, 'tamanho1')">
             Adicionar ao carrinho
         </button>
     </div>
 
+    <!-- PRODUTO 2 -->
     <div class="produto">
         <img src="1777033680344.jpg">
         <h3>Pijama Blogueirinha</h3>
@@ -109,14 +107,21 @@
             🎁 É para presente
         </label>
 
-        <button onclick="adicionarCarrinhoComPresente('Pijama Blogueirinha', 39.90, 'presente2')">
+        <p>📏 Tamanho:</p>
+
+        <label><input type="radio" name="tamanho2" value="PP"> PP</label>
+        <label><input type="radio" name="tamanho2" value="P"> P</label>
+        <label><input type="radio" name="tamanho2" value="M"> M</label>
+        <label><input type="radio" name="tamanho2" value="G"> G</label>
+
+        <button onclick="adicionarComTamanho('Pijama Blogueirinha', 39.90, 'tamanho2')">
             Adicionar ao carrinho
         </button>
     </div>
+
 </section>
 
-
-<!-- 🛒 CARRINHO LATERAL (ÚNICO) -->
+<!-- 🛒 CARRINHO LATERAL -->
 <div id="carrinho-lateral" class="carrinho-lateral">
 
     <button class="fechar" onclick="toggleCarrinho()">❌</button>
@@ -130,37 +135,43 @@
     <!-- 💳 PAGAMENTO -->
     <h3>💳 Pagamento</h3>
     <div class="opcoes-pagamento">
-       <label class="pag-item">
-    <input type="radio" name="pagamento" value="Pix">
-    <span>💸 Pix</span>
-</label>
 
-<label class="pag-item">
-    <input type="radio" name="pagamento" value="Dinheiro">
-    <span>💵 Dinheiro</span>
-</label>
+        <label class="pag-item">
+            <input type="radio" name="pagamento" value="Pix">
+            <span>💸 Pix</span>
+        </label>
 
-<label class="pag-item">
-    <input type="radio" name="pagamento" value="Crédito">
-    <span>💳 Crédito</span>
-</label>
+        <label class="pag-item">
+            <input type="radio" name="pagamento" value="Dinheiro">
+            <span>💵 Dinheiro</span>
+        </label>
 
-<label class="pag-item">
-    <input type="radio" name="pagamento" value="Débito">
-    <span>💳 Débito</span>
-</label>
+        <label class="pag-item">
+            <input type="radio" name="pagamento" value="Crédito">
+            <span>💳 Crédito</span>
+        </label>
+
+        <label class="pag-item">
+            <input type="radio" name="pagamento" value="Débito">
+            <span>💳 Débito</span>
+        </label>
+
     </div>
 
     <!-- 🚚 ENTREGA -->
     <h3>🚚 Entrega</h3>
     <div class="opcoes-entrega">
+
         <label class="entrega-item">
-            <input type="radio" name="tipoEntrega" value="Retirada" onclick="mostrarEndereco(false)"> 🏪 Retirada
+            <input type="radio" name="tipoEntrega" value="Retirada" onclick="mostrarEndereco(false)">
+            🏪 Retirada
         </label>
 
         <label class="entrega-item">
-            <input type="radio" name="tipoEntrega" value="Entrega" onclick="mostrarEndereco(true)"> 🚚 Entrega
+            <input type="radio" name="tipoEntrega" value="Entrega" onclick="mostrarEndereco(true)">
+            🚚 Entrega
         </label>
+
     </div>
 
     <div id="campo-endereco" style="display:none;">
