@@ -1,19 +1,34 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #fff0f5;
-    margin: 0;
-    padding: 0;
-    max-width: 100%;
     overflow-x: hidden;
 }
 
+/* HEADER */
 header {
     background-color: #ff69b4;
     color: white;
     text-align: center;
     padding: 20px;
+    position: relative;
 }
 
+nav a {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* SEÇÕES */
 section {
     padding: 20px;
 }
@@ -22,22 +37,27 @@ h2 {
     text-align: center;
 }
 
-/* PRODUTO */
+/* PRODUTOS */
 .produto {
+    width: 220px;
     display: inline-block;
     vertical-align: top;
     background: white;
     padding: 15px;
     margin: 15px;
-    width: 220px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     text-align: center;
+    transition: all 0.3s ease;
+}
+
+.produto:hover {
+    transform: translateY(-5px);
 }
 
 /* IMAGEM */
 .produto img {
-    width: 180px;
+    width: 100%;
     height: 180px;
     object-fit: cover;
     border-radius: 10px;
@@ -54,36 +74,29 @@ button {
     background-color: #ff69b4;
     color: white;
     border: none;
-    padding: 10px;
-    border-radius: 5px;
+    padding: 12px;
+    border-radius: 8px;
     cursor: pointer;
+    width: 100%;
+    font-size: 15px;
 }
 
 button:hover {
     background-color: #ff1493;
 }
 
-/* CARRINHO */
-.carrinho {
-    background: white;
-    padding: 20px;
-    margin: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+/* TAMANHOS */
+.produto label {
+    margin: 5px;
+    cursor: pointer;
+    font-size: 14px;
 }
 
-/* LISTA DO CARRINHO */
-#lista-carrinho li {
-    margin: 10px 0;
+.produto input[type="radio"] {
+    accent-color: #ff1493;
 }
 
-#lista-carrinho button {
-    margin: 0 3px;
-    padding: 5px 8px;
-    font-size: 12px;
-}
-
-/* WHATSAPP FIXO */
+/* WHATSAPP */
 .whatsapp-fixo {
     position: fixed;
     bottom: 20px;
@@ -97,117 +110,7 @@ button:hover {
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 
-.whatsapp-fixo:hover {
-    background-color: #1ebe5d;
-}
-   
-.opcoes-pagamento {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    margin-top: 15px;
-}
-
-.pag-item {
-    background: white;
-    padding: 15px;
-    border-radius: 10px;
-    text-align: center;
-    cursor: pointer;
-    border: 2px solid #eee;
-    font-weight: 500;
-}
-
-.pag-item:hover {
-    border-color: #ff69b4;
-}
-
-/* esconder bolinha padrão */
-.pag-item input {
-    display: none;
-}
-
-/* quando selecionado */
-.pag-item input:checked {
-    outline: 2px solid #ff1493;
-}
-.entrega {
-    background: white;
-    padding: 20px;
-    margin: 20px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-.opcoes-entrega {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    margin: 15px 0;
-}
-
-.entrega-item {
-    background: #fff0f5;
-    padding: 15px;
-    border-radius: 10px;
-    cursor: pointer;
-    border: 2px solid #eee;
-}
-
-.entrega-item:hover {
-    border-color: #ff69b4;
-}
-
-#endereco {
-    width: 90%;
-    padding: 12px;
-    border: 2px solid #ffb6c1;
-    border-radius: 8px;
-    margin-top: 10px;
-}
-@media (max-width: 600px) {
-
-    header h1 {
-        font-size: 22px;
-    }
-
-    .produto {
-        width: 90%;
-        margin: 10px auto;
-    }
-
-    .produto img {
-        width: 100%;
-        height: auto;
-    }
-
-    button {
-        width: 100%;
-    }
-
-    .carrinho {
-        margin: 10px;
-    }
-
-    .pagamento, .entrega {
-        margin: 10px;
-    }
-
-}
-nav a {
-    margin: 0 10px;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-footer {
-    background: #ff69b4;
-    color: white;
-    text-align: center;
-    padding: 15px;
-    margin-top: 20px;
-}
+/* CARRINHO TOPO */
 .carrinho-topo {
     position: absolute;
     top: 20px;
@@ -217,8 +120,9 @@ footer {
     padding: 8px 12px;
     border-radius: 20px;
     font-weight: bold;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
+
+/* CARRINHO LATERAL */
 .carrinho-lateral {
     position: fixed;
     top: 0;
@@ -226,175 +130,17 @@ footer {
     width: 300px;
     height: 100%;
     background: white;
-    box-shadow: -2px 0 10px rgba(0,0,0,0.2);
     padding: 20px;
     transition: right 0.3s;
     z-index: 1000;
     overflow-y: auto;
 }
 
-/* quando abrir */
 .carrinho-lateral.ativo {
     right: 0;
 }
-/* BANNER */
-.banner {
-    background: linear-gradient(45deg, #ff69b4, #ff1493);
-}
 
-/* NOVO - separação visual */
-.banner-secundario {
-    background: linear-gradient(45deg, #ffc0cb, #ffb6c1);
-    color: #333;
-}
-
-
-/* CARROSSEL */
-.carrossel {
-    overflow: hidden;
-    padding: 20px;
-    position: relative;
-}
-
-/* CONTAINER */
-.carrossel-container {
-    display: flex;
-    gap: 20px;
-    width: max-content;
-    animation: deslizar 20s linear infinite;
-}
-
-/* PAUSAR AO PASSAR O MOUSE */
-.carrossel-container:hover {
-    animation-play-state: paused;
-}
-
-/* CARDS */
-.card {
-    min-width: 200px;
-    background: white;
-    padding: 10px;
-    border-radius: 15px;
-    text-align: center;
-    transition: 0.3s;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-/* EFEITO FLUTUAR */
-.card:hover {
-    transform: translateY(-10px) scale(1.05);
-    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
-}
-
-/* IMAGEM */
-.card img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-/* ANIMAÇÃO INFINITA SUAVE */
-@keyframes deslizar {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
-}
-/* TAMANHO DO CARD */
-.card {
-    min-width: 180px;
-    max-width: 180px;
-}
-
-/* IMAGEM AJUSTADA */
-.card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover; /* mantém proporção sem distorcer */
-    border-radius: 10px;
-}
-/* CARDS MAIS PREMIUM */
-.card {
-    min-width: 180px;
-    max-width: 180px;
-    background: white;
-    padding: 10px;
-    border-radius: 18px;
-    text-align: center;
-    transition: all 0.3s ease;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-    position: relative;
-    overflow: hidden;
-}
-
-/* IMAGEM */
-.card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 12px;
-    transition: transform 0.4s ease;
-}
-
-/* TEXTO */
-.card p {
-    margin-top: 8px;
-    font-weight: 500;
-    color: #444;
-}
-
-/* HOVER (EFEITO LOJA GRANDE) */
-.card:hover {
-    transform: translateY(-8px) scale(1.03);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-}
-
-/* ZOOM NA IMAGEM */
-.card:hover img {
-    transform: scale(1.1);
-}
-
-/* EFEITO BRILHO */
-.card::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.5), transparent);
-    transition: 0.6s;
-}
-
-.card:hover::after {
-    left: 100%;
-}
-.banner-secundario {
-    display: flex;
-    flex-direction: column; /* um embaixo do outro */
-    justify-content: center; /* centraliza vertical */
-    align-items: center; /* centraliza horizontal */
-    text-align: center;
-    height: 200px; /* opcional (define altura do banner) */
-}
-.banner-secundario h2 {
-    margin: 0;
-    font-size: 24px;
-}
-
-.banner-secundario p {
-    margin-top: 8px;
-    font-size: 16px;
-    opacity: 0.8;
-}
-/* AJUSTES DO CARRINHO LATERAL */
-.carrinho-lateral h3 {
-    margin-top: 15px;
-    font-size: 16px;
-}
-
-/* OPÇÕES EM LISTA (UMA EMBAIXO DA OUTRA) */
+/* PAGAMENTO E ENTREGA */
 .opcoes-pagamento,
 .opcoes-entrega {
     display: grid;
@@ -402,48 +148,98 @@ footer {
     gap: 10px;
 }
 
-/* LABEL LIMPA */
 .pag-item,
 .entrega-item {
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    font-size: 15px;
     display: flex;
     align-items: center;
-}
-
-/* BOLINHA PERSONALIZADA */
-.pag-item input,
-.entrega-item input {
-    margin-right: 8px;
-    transform: scale(1.2);
-    accent-color: #ff1493; /* rosa bonito */
-    cursor: pointer;
-}
-/* BOLINHA ROSA FUNCIONANDO */
-.pag-item input,
-.entrega-item input {
-    display: inline-block !important;
-    margin-right: 8px;
-    transform: scale(1.2);
-    accent-color: #ff1493;
-    cursor: pointer;
-}
-/* TAMANHO ESTILO */
-.produto label {
-    margin-right: 8px;
-    cursor: pointer;
     font-size: 14px;
+    cursor: pointer;
 }
 
-.produto input[type="radio"] {
+.pag-item input,
+.entrega-item input {
+    margin-right: 8px;
     accent-color: #ff1493;
 }
+
+/* ENDEREÇO */
+#endereco {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ffb6c1;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+/* BANNER */
+.banner-secundario {
+    background: linear-gradient(45deg, #ffc0cb, #ffb6c1);
+    color: #333;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.banner-secundario h2 {
+    font-size: 24px;
+}
+
+.banner-secundario p {
+    font-size: 16px;
+}
+
+/* CARROSSEL */
+.carrossel {
+    overflow: hidden;
+}
+
+.carrossel-container {
+    display: flex;
+    gap: 20px;
+    animation: deslizar 20s linear infinite;
+}
+
+.carrossel-container:hover {
+    animation-play-state: paused;
+}
+
+/* CARD */
+.card {
+    min-width: 160px;
+    background: white;
+    padding: 10px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* ANIMAÇÃO */
+@keyframes deslizar {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* FOOTER */
+footer {
+    background: #ff69b4;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* 📱 MOBILE REAL */
 @media (max-width: 600px) {
 
-    /* HEADER */
     header {
         padding: 15px;
     }
@@ -453,35 +249,31 @@ footer {
         margin: 5px 0;
     }
 
-    /* PRODUTOS */
+    /* PRODUTO 1 POR LINHA */
     .produto {
         width: 95%;
         margin: 10px auto;
+        display: block;
+    }
+
+    /* IMAGEM MAIOR */
+    .produto img {
+        height: 220px;
+    }
+
+    /* BOTÃO GRANDE */
+    button {
+        font-size: 16px;
+        padding: 14px;
     }
 
     /* CARROSSEL */
     .card {
-        min-width: 140px;
-        max-width: 140px;
+        min-width: 130px;
     }
 
     .card img {
-        height: 140px;
-    }
-
-    /* BANNER */
-    .banner,
-    .banner-secundario {
-        padding: 30px 10px;
-        height: auto;
-    }
-
-    .banner-secundario h2 {
-        font-size: 20px;
-    }
-
-    .banner-secundario p {
-        font-size: 14px;
+        height: 130px;
     }
 
     /* CARRINHO */
@@ -494,7 +286,17 @@ footer {
         right: 10px;
         font-size: 14px;
     }
-}
-.produto {
-    transition: all 0.3s ease;
+
+    /* BANNER */
+    .banner-secundario {
+        padding: 30px 15px;
+    }
+
+    .banner-secundario h2 {
+        font-size: 20px;
+    }
+
+    .banner-secundario p {
+        font-size: 14px;
+    }
 }
